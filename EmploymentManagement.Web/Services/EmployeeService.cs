@@ -65,5 +65,20 @@ namespace EmploymentManagement.Web.Services
             }
             return null;
         }
+
+        public async Task<Employee> CreateEmployee(Employee createEmployee)
+        {
+            string json = JsonConvert.SerializeObject(createEmployee);
+            StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
+            var response = await httpClient.PostAsync($"api/employee", content);
+
+            if (response.IsSuccessStatusCode)
+            {
+                Stream contentStream = await response.Content.ReadAsStreamAsync();
+                Employee data = getDataFromStream<Employee>(contentStream);
+                return data;
+            }
+            return null;
+        }
     }
 }

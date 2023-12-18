@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmploymentManagement.Web", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeManagement.API", "EmployeeManagement.API\EmployeeManagement.API.csproj", "{5425C87B-47FF-49DD-BC95-08C07840FD83}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReUseAbleComponent", "ReUseAbleComponent\ReUseAbleComponent.csproj", "{0A7013D0-C7C0-44EE-A596-5B4F4C885E0F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReUseAbleComponent", "ReUseAbleComponent\ReUseAbleComponent.csproj", "{0A7013D0-C7C0-44EE-A596-5B4F4C885E0F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

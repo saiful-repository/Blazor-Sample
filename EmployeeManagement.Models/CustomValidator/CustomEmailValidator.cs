@@ -10,13 +10,16 @@ namespace EmployeeManagement.Models.CustomValidator
         public string AllowDomain { get; set; }
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
-            
-            string[] emails = value.ToString().Split('@');
-            if (emails[1].ToUpper() == AllowDomain.ToUpper())
+            if (value != null)
             {
-                return null;
+                string[] emails = value.ToString().Split('@');
+                if (emails[1].ToUpper() == AllowDomain.ToUpper())
+                {
+                    return null;
+                }
+                return new ValidationResult($"Email must be with {AllowDomain}", new[] { validationContext.MemberName });
             }
-            return new ValidationResult($"Email must be with {AllowDomain}", new[] { validationContext.MemberName });
+            return null;
         }
     }
 }
