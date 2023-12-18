@@ -1,4 +1,5 @@
-﻿using EmployeeManagement.Models;
+﻿using AutoMapper;
+using EmployeeManagement.Models;
 using EmploymentManagement.Web.Services;
 using Microsoft.AspNetCore.Components;
 using System.Collections.Generic;
@@ -21,21 +22,15 @@ namespace EmploymentManagement.Web.Pages
 
         [Parameter]
         public string Id { get; set; }
-        
+
+        [Inject]
+        public IMapper Mapper { get; set; }
 
         protected async override Task OnInitializedAsync()
         {
             Employee =  await EmployeeService.GetEmployee(int.Parse(Id));
             Departments = (await DepartmentService.GetDepartments()).ToList();
-            EditEmployeeModel.EmployeeId = Employee.EmployeeId;
-            EditEmployeeModel.FirstName = Employee.FirstName;
-            EditEmployeeModel.LastName = Employee.LastName;     
-            EditEmployeeModel.Email = Employee.Email;
-            EditEmployeeModel.DateOfBirth= Employee.DateOfBirth;    
-            EditEmployeeModel.Gender = Employee.Gender;
-            EditEmployeeModel.DepartmentId = Employee.DepartmentId;
-            EditEmployeeModel.Department = Employee.Department; 
-
+            Mapper.Map(Employee, EditEmployeeModel);
         }
 
         protected void HandleValidSubmit()

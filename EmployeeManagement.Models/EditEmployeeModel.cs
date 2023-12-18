@@ -17,6 +17,8 @@ namespace EmployeeManagement.Models
         [EmailAddress]
         [CustomEmailValidator(AllowDomain = "gmail.com")]
         public string Email { get; set; }
+        [Compare("Email", ErrorMessage = "Email doesn't match")]
+        public string ConfirmEmail { get; set; }
         public DateTime DateOfBirth { get; set; }
         public Gender Gender { get; set; }
         public string PhotoPath { get; set; }

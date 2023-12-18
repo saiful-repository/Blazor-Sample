@@ -1,3 +1,4 @@
+using EmploymentManagement.Web.AutoMapper;
 using EmploymentManagement.Web.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Components;
@@ -35,6 +36,7 @@ namespace EmploymentManagement.Web
             {
                 client.BaseAddress = new Uri("http://localhost:24797/");
             });
+            services.AddAutoMapper(typeof(EmployeeProfile));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
