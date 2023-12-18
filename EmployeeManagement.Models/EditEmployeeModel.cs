@@ -7,7 +7,7 @@ using System.Text;
 
 namespace EmployeeManagement.Models
 {
-    public class Employee
+    public class EditEmployeeModel
     {
         public int EmployeeId { get; set; }
         [Required]
@@ -20,7 +20,8 @@ namespace EmployeeManagement.Models
         public DateTime DateOfBirth { get; set; }
         public Gender Gender { get; set; }
         public string PhotoPath { get; set; }
-        public int DepartmentId { get; set; }       
-        public Department Department { get; set; }
+        public int DepartmentId { get; set; }
+        [ValidateComplexType]
+        public Department Department { get; set; } = new Department();
     }
 }
