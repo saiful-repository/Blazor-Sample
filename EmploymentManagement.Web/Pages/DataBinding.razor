@@ -1,0 +1,7 @@
+﻿@page "/databinding"
+@inherits DataBindingBase
+<h4>My Name is @Name</h4>
+<input type="text" value="@Name" @onchange="@(e=>Name = e.Value.ToString())" />
+<input type="text" @bind="Name"/>
+<input type="text" @bind="Name" @bind:event="oninput" />
+

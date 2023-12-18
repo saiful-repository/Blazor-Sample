@@ -1,0 +1,20 @@
+﻿@page "/"
+@inherits EmployeeListBase
+<h3>Employee List</h3>
+
+@if (Employees == null)
+{
+    <div class="spinner">Loading...</div>
+}
+else
+{
+<div class="card-deck">
+    <h2>You have selected employee: @totalCount</h2>
+    @foreach(var employee in Employees)
+    {
+            <EmployeeItem Employee="@employee" onCheckSelection="ShowCountSelection"></EmployeeItem>
+    }
+</div>
+}
+
+
