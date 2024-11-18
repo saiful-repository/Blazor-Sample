@@ -32,5 +32,11 @@ namespace EmploymentManagement.Web.Pages
                 totalCount--;
             }
         }
+
+        public async Task EmployeeDelete(int employeeId)
+        {
+            var data = await EmployeeService.DeleteEmployee(employeeId);
+            Employees = (await EmployeeService.GetEmployees()).ToList();
+        }
     }
 }

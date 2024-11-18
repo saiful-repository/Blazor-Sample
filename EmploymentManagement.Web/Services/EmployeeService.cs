@@ -80,5 +80,18 @@ namespace EmploymentManagement.Web.Services
             }
             return null;
         }
+
+        public async Task<Employee> DeleteEmployee(int id)
+        {
+            var response = await httpClient.DeleteAsync($"api/employee/{id}");
+
+            if (response.IsSuccessStatusCode)
+            {
+                Stream contentStream = await response.Content.ReadAsStreamAsync();
+                Employee data = getDataFromStream<Employee>(contentStream);
+                return data;
+            }
+            return null;
+        }
     }
 }

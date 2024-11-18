@@ -13,9 +13,15 @@ namespace EmploymentManagement.Web.Pages
         [Parameter]
         public EventCallback<bool> onCheckSelection { get; set; }
 
+        [Parameter]
+        public EventCallback<int> onEmployeeDelete { get; set; }
         public async Task CheckBoxChanged(ChangeEventArgs e)
         {
            await onCheckSelection.InvokeAsync((bool)e.Value);
+        }
+        public async Task DeleteEmployee(int id)
+        {
+            await onEmployeeDelete.InvokeAsync(id);
         }
     }
 }

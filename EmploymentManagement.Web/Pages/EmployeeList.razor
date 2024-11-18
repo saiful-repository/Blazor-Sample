@@ -12,7 +12,7 @@ else
     <h2>You have selected employee: @totalCount</h2>
     @foreach(var employee in Employees)
     {
-            <EmployeeItem Employee="@employee" onCheckSelection="ShowCountSelection"></EmployeeItem>
+            <EmployeeItem Employee="@employee" onCheckSelection="ShowCountSelection" onEmployeeDelete="EmployeeDelete"></EmployeeItem>
     }
 </div>
 }
