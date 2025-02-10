@@ -14,4 +14,5 @@ This is a **Blazor Server** sample project that demonstrates how to perform **CR
 - **Blazor Server** (.NET 6)  
 - **ASP.NET Core Web API**  
 - **Entity Framework Core**  
-- **Dependency Injection (DI)**  
+- **Dependency Injection (DI)**
+- **MSSQL** 
